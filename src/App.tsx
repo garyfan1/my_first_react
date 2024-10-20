@@ -3,11 +3,20 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+import '@mantine/core/styles.css';
+
+import { MantineProvider, createTheme } from '@mantine/core';
+
 function App() {
+
+  const theme = createTheme({
+    /** Put your mantine theme override here */
+  });
+
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <MantineProvider theme={theme}>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -28,7 +37,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
+    </MantineProvider>
   )
 }
 
