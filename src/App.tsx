@@ -1,12 +1,11 @@
-import { AppShell } from "@mantine/core";
+import { AppShell, NavLink } from "@mantine/core";
 import { Burger } from "@mantine/core";
-
-import Content from "./content";
 
 import "@mantine/core/styles.css"; // needed at the root of App to use Mantine
 
 import { MantineProvider, createTheme } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const theme = createTheme({
@@ -25,14 +24,20 @@ function App() {
         }}
         padding="md"
       >
-        <AppShell.Header>this is the header</AppShell.Header>
+        <AppShell.Header p="lg">Header</AppShell.Header>
 
         <AppShell.Navbar p="md">
-          <Burger opened={opened} onClick={toggle} />
+          <AppShell.Section>
+            <Burger p="sm" opened={opened} onClick={toggle} />
+
+            <NavLink href="/" label="Content" />
+            <NavLink href="about-me" label="About Me" />
+            <NavLink href="past-work" label="Past Work" />
+          </AppShell.Section>
         </AppShell.Navbar>
 
         <AppShell.Main>
-          <Content />
+          <Outlet />
         </AppShell.Main>
       </AppShell>
     </MantineProvider>
