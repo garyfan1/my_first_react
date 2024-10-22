@@ -1,10 +1,13 @@
-import { AppShell, NavLink } from "@mantine/core";
-import { Burger } from "@mantine/core";
+import {
+  Anchor,
+  AppShell,
+  Container,
+  Group,
+} from "@mantine/core";
 
 import "@mantine/core/styles.css"; // needed at the root of App to use Mantine
 
 import { MantineProvider, createTheme } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -12,32 +15,27 @@ function App() {
     /** Put your mantine theme override here */
   });
 
-  const [opened, { toggle }] = useDisclosure();
+  const pages = [
+    { label: "Home", href: "/" },
+    { label: "Past Work", href: "past-work" },
+    { label: "About Me", href: "about-me" },
+  ].map((items) => {
+    return <Anchor size="lg" href={items.href}>{items.label}</Anchor>;
+  });
 
   return (
     <MantineProvider theme={theme}>
-      <AppShell
-        header={{ height: 60 }}
-        navbar={{
-          width: 250,
-          breakpoint: "sm",
-        }}
-        padding="md"
-      >
-        <AppShell.Header p="lg">Header</AppShell.Header>
+      <AppShell header={{ height: 80 }} padding="md">
+        <AppShell.Header p="xl">
 
-        <AppShell.Navbar p="md">
-          <AppShell.Section>
-            <Burger p="sm" opened={opened} onClick={toggle} />
-
-            <NavLink href="/" label="Content" />
-            <NavLink href="about-me" label="About Me" />
-            <NavLink href="past-work" label="Past Work" />
-          </AppShell.Section>
-        </AppShell.Navbar>
+          <Group justify="center">{pages}</Group>
+          
+        </AppShell.Header>
 
         <AppShell.Main>
-          <Outlet />
+          <Container>
+            <Outlet />
+          </Container>
         </AppShell.Main>
       </AppShell>
     </MantineProvider>
