@@ -33,7 +33,8 @@ function App() {
         </AppShell.Header>
 
         <AppShell.Main>
-          <Container p={20} bg="var(--mantine-color-blue-light)">
+          {/* <Container p={20} bg="var(--mantine-color-blue-light)"> */}
+          <Container p={20}>
             <Outlet />
           </Container>
         </AppShell.Main>
