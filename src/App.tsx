@@ -1,6 +1,6 @@
 import {
-  Anchor,
   AppShell,
+  Button,
   Container,
   Group,
 } from "@mantine/core";
@@ -8,34 +8,35 @@ import {
 import "@mantine/core/styles.css"; // needed at the root of App to use Mantine
 
 import { MantineProvider, createTheme } from "@mantine/core";
-import { Outlet } from "react-router-dom";
+import AboutMe from "./components/aboutMe";
+import Experience from "./components/experience";
+import Projects from "./components/projects";
 
 function App() {
   const theme = createTheme({
     /** Put your mantine theme override here */
   });
 
-  const pages = [
-    { label: "Home", href: "/" },
-    { label: "Experience", href: "experience" },
-    { label: "About Me", href: "about-me" },
-  ].map((items) => {
-    return <Anchor size="lg" href={items.href}>{items.label}</Anchor>;
-  });
 
   return (
     <MantineProvider theme={theme}>
       <AppShell header={{ height: 80 }} padding="md">
         <AppShell.Header p="xl">
 
-          <Group justify="center">{pages}</Group>
+          <Group justify="center">
+          <Button variant="transparent">About Me</Button>
+          <Button variant="transparent">Experience</Button>
+          <Button variant="transparent">Projects</Button>
+          </Group>
           
         </AppShell.Header>
 
         <AppShell.Main>
           {/* <Container p={20} bg="var(--mantine-color-blue-light)"> */}
           <Container p={20}>
-            <Outlet />
+            <AboutMe/>
+            <Experience/>
+            <Projects/>
           </Container>
         </AppShell.Main>
       </AppShell>
