@@ -1,4 +1,4 @@
-import { Paper, Title, Text, Stack } from "@mantine/core";
+import { Paper, Title, Text, Stack, Badge } from "@mantine/core";
 
 function Projects() {
   return (
@@ -7,20 +7,35 @@ function Projects() {
 
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>My Portfolio</Title>
-        <Text>It is this portfolio!</Text>
+        <Text>
+          Personal portfolio written in React. Using Mantine for UI, hosting on
+          GitHub pages and Firebase.
+        </Text>
+        <Badge>React</Badge> <Badge>Mantine</Badge> <Badge>GitHub</Badge>{" "}
+        <Badge>Firebase</Badge>
       </Paper>
 
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>Serverless Reminder</Title>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+        <Text>
+          A reminder developed with the Chalice framework and hosted on AWS
+          Lambda, utilizing AWS DynamoDB for efficient user management. Set up
+          events on AWS EventBridge to handle HTTP request methods, URLs,
+          dateTime, and data payloads.
+        </Text>
+        <Badge>AWS</Badge> <Badge>Chalice</Badge>
       </Paper>
 
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>Badminton Court Reminder</Title>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+        <Text>
+          Reminder that utilized Beautiful Soup to parse court-booking websites and Line
+          Messaging API to notify availability via messages.
+        </Text>
+        <Badge>Line Messaging API</Badge> <Badge>Beautiful Soup</Badge>
       </Paper>
     </Stack>
   );
 }
 
-export default Projects
+export default Projects;
