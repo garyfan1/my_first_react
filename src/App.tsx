@@ -17,7 +17,7 @@ function App() {
 
   const pages = [
     { label: "Home", href: "/" },
-    { label: "Past Work", href: "past-work" },
+    { label: "Experience", href: "experience" },
     { label: "About Me", href: "about-me" },
   ].map((items) => {
     return <Anchor size="lg" href={items.href}>{items.label}</Anchor>;

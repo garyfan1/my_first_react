@@ -7,7 +7,7 @@ function Projects() {
 
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>My Portfolio</Title>
-        <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
+        <Text>It is this portfolio!</Text>
       </Paper>
 
       <Paper p={10} radius="sm" withBorder>
