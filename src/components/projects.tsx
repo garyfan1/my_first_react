@@ -1,9 +1,10 @@
 import { Paper, Title, Text, Stack, Badge } from "@mantine/core";
+import { forwardRef } from "react";
 
-function Projects() {
+const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
   return (
     <Stack>
-      <Title>Projects</Title>
+      <Title ref={projectsRef}>Projects</Title>
 
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>My Portfolio</Title>
@@ -29,13 +30,14 @@ function Projects() {
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>Badminton Court Reminder</Title>
         <Text>
-          Reminder that utilized Beautiful Soup to parse court-booking websites and Line
-          Messaging API to notify availability via messages.
+          Reminder that utilized Beautiful Soup to parse court-booking websites
+          and Line Messaging API to notify availability via messages.
         </Text>
         <Badge>Line Messaging API</Badge> <Badge>Beautiful Soup</Badge>
       </Paper>
+      
     </Stack>
   );
-}
+});
 
 export default Projects;

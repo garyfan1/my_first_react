@@ -1,11 +1,6 @@
-import {
-  AppShell,
-  Button,
-  Container,
-  Group,
-} from "@mantine/core";
+import { AppShell, Button, Container, Group, Space } from "@mantine/core";
 
-import "@mantine/core/styles.css"; // needed at the root of App to use Mantine
+import "@mantine/core/styles.css";
 
 import { MantineProvider, createTheme } from "@mantine/core";
 import AboutMe from "./components/aboutMe";
@@ -18,31 +13,47 @@ function App() {
     /** Put your mantine theme override here */
   });
 
-  const {scrollIntoView, targetRef} = useScrollIntoView<HTMLHeadingElement>({offset: 60});
+  const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
+    useScrollIntoView<HTMLHeadingElement>({ offset: 100 });
+  const { scrollIntoView: scrollExperieceItoView, targetRef: experieceRef } =
+    useScrollIntoView<HTMLHeadingElement>({ offset: 100 });
+  const { scrollIntoView: scrollProjectsItoView, targetRef: projectsRef } =
+    useScrollIntoView<HTMLHeadingElement>({ offset: 100 });
 
-  const scrollToAboutMe = () =>{
-    scrollIntoView({alignment: "center"})
-  }
+  const scrollToAboutMe = () => {
+    scrollAboutMeItoView({ alignment: "start" });
+  };
+  const scrollToExperience = () => {
+    scrollExperieceItoView({ alignment: "start" });
+  };
+  const scrollToProjects = () => {
+    scrollProjectsItoView({ alignment: "start" });
+  };
 
   return (
     <MantineProvider theme={theme}>
       <AppShell header={{ height: 80 }} padding="md">
         <AppShell.Header p="xl">
-
           <Group justify="center">
-          <Button onClick={scrollToAboutMe} variant="transparent">About Me</Button>
-          <Button onClick={scrollToAboutMe} variant="transparent">Experience</Button>
-          <Button onClick={scrollToAboutMe} variant="transparent">Projects</Button>
+            <Button onClick={scrollToAboutMe} variant="transparent">
+              About Me
+            </Button>
+            <Button onClick={scrollToExperience} variant="transparent">
+              Experience
+            </Button>
+            <Button onClick={scrollToProjects} variant="transparent">
+              Projects
+            </Button>
           </Group>
-          
         </AppShell.Header>
 
         <AppShell.Main>
-          {/* <Container p={20} bg="var(--mantine-color-blue-light)"> */}
-          <Container p={20}>
-            <AboutMe ref={targetRef}/>
-            <Experience/>
-            <Projects/>
+          <Container size="sm">
+            <AboutMe ref={aboutMeRef} />
+            <Space h={20}/>
+            <Experience ref={experieceRef} />
+            <Space h={20}/>
+            <Projects ref={projectsRef} />
           </Container>
         </AppShell.Main>
       </AppShell>

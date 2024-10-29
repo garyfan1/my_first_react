@@ -1,11 +1,11 @@
 import { Paper, Title, Text, Stack, List, Badge } from "@mantine/core";
+import { forwardRef } from "react";
 
-import Projects from "./projects";
-
-function Experience() {
+const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
   return (
     <Stack>
-      <Title>Work Experience</Title>
+      <Title ref={experienceRef}>Work Experience</Title>
+
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>Back-End Developer</Title>
         <Text>Lychee Technology</Text>
@@ -28,9 +28,11 @@ function Experience() {
             RESTful APIs to ensure functionality and facilitate team
             collaboration.
           </List.Item>
-          <Badge>Django</Badge> <Badge>Django Rest Framework</Badge> <Badge>MySQL</Badge> <Badge>Postman</Badge>
+          <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>{" "}
+          <Badge>MySQL</Badge> <Badge>Postman</Badge>
         </List>
       </Paper>
+
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>Application Developer</Title>
         <Text>Government of British Columbia</Text>
@@ -52,6 +54,7 @@ function Experience() {
           <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
         </List>
       </Paper>
+
       <Paper p={10} radius="sm" withBorder>
         <Title order={2}>Software Designer</Title>
         <Text>Schneider Electric</Text>
@@ -64,9 +67,9 @@ function Experience() {
           <Badge>Angular</Badge>
         </List>
       </Paper>
-      <Projects />
+      
     </Stack>
   );
-}
+});
 
 export default Experience;
