@@ -1,10 +1,13 @@
 import { Space, Text, Title } from "@mantine/core";
+import { forwardRef } from "react";
 
 
-function AboutMe() {
+const AboutMe = forwardRef<HTMLHeadingElement>((_, aboutMeRef) => {
+
+
   return (
     <>
-      <Title>About Me</Title>
+      <Title ref={aboutMeRef}>About Me</Title>
       <Text>
         I initially planned to major in civil engineering, but while taking an
         elective course in C++, I developed a strong interest in coding and
@@ -36,6 +39,6 @@ function AboutMe() {
       </Text>
     </>
   );
-}
+});
 
 export default AboutMe;
