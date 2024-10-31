@@ -1,13 +1,24 @@
-import { Title, Text, Stack, Badge } from "@mantine/core";
+import { Title, Text, Stack, Badge, ActionIcon, Group } from "@mantine/core";
 import { forwardRef } from "react";
 import MyPaper from "../components/myPaper";
+import { IconBrandGithub } from "@tabler/icons-react";
 
 const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
   return (
     <Stack>
       <Title ref={projectsRef}>Projects</Title>
       <MyPaper>
-        <Title order={2}>My Portfolio</Title>
+        <Group justify="space-between">
+          <Title order={2}>My Portfolio</Title>
+          <ActionIcon
+            variant="transparent"
+            component="a"
+            href="#"
+            target="_blank"
+          >
+            <IconBrandGithub></IconBrandGithub>
+          </ActionIcon>
+        </Group>
         <Text>
           Personal portfolio written in React. Using Mantine for UI, hosting on
           GitHub pages and Firebase.
@@ -17,7 +28,17 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
       </MyPaper>
 
       <MyPaper>
-        <Title order={2}>Serverless Reminder</Title>
+        <Group justify="space-between">
+          <Title order={2}>Serverless Reminder</Title>
+          <ActionIcon
+            variant="transparent"
+            component="a"
+            href="https://github.com/garyfan1/aws_scheduler_public"
+            target="_blank"
+          >
+            <IconBrandGithub></IconBrandGithub>
+          </ActionIcon>
+        </Group>
         <Text>
           A reminder developed with the Chalice framework and hosted on AWS
           Lambda, utilizing AWS DynamoDB for efficient user management. Set up
@@ -28,7 +49,17 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
       </MyPaper>
 
       <MyPaper>
-        <Title order={2}>Badminton Court Reminder</Title>
+        <Group justify="space-between">
+          <Title order={2}>Badminton Court Reminder</Title>
+          <ActionIcon
+            variant="transparent"
+            component="a"
+            href="https://github.com/garyfan1/court_reminder"
+            target="_blank"
+          >
+            <IconBrandGithub></IconBrandGithub>
+          </ActionIcon>
+        </Group>
         <Text>
           Reminder that utilized Beautiful Soup to parse court-booking websites
           and Line Messaging API to notify availability via messages.
