@@ -34,7 +34,8 @@ function App() {
     <MantineProvider theme={theme}>
       <AppShell header={{ height: 80 }} padding="md">
         <AppShell.Header p="xl">
-          <Group justify="center">
+        <Container size="sm">
+          <Group grow justify="center">
             <Button onClick={scrollToAboutMe} variant="transparent">
               About Me
             </Button>
@@ -45,6 +46,7 @@ function App() {
               Projects
             </Button>
           </Group>
+          </Container>
         </AppShell.Header>
 
         <AppShell.Main>

@@ -1,5 +1,15 @@
-import { Paper, Title, Text, Stack, List, Badge } from "@mantine/core";
+import {
+  Paper,
+  Title,
+  Text,
+  Stack,
+  List,
+  Badge,
+  ActionIcon,
+  Group,
+} from "@mantine/core";
 import { forwardRef } from "react";
+import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";
 
 const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
   return (
@@ -7,8 +17,20 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
       <Title ref={experienceRef}>Work Experience</Title>
 
       <Paper p={10} radius="sm" withBorder>
-        <Title order={2}>Back-End Developer</Title>
+        <Group justify="space-between">
+          <Title order={2}>Back-End Developer</Title>
+
+          <ActionIcon
+            variant="transparent"
+            component="a"
+            href="https://app.g7star.net/"
+            target="_blank"
+          >
+            <IconExternalLink></IconExternalLink>
+          </ActionIcon>
+        </Group>
         <Text>Lychee Technology</Text>
+
         <List>
           <List.Item>
             Responsible for backend development using Django Rest Framework for
@@ -28,13 +50,35 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             RESTful APIs to ensure functionality and facilitate team
             collaboration.
           </List.Item>
-          <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>{" "}
+          <Group>
+          <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>
           <Badge>MySQL</Badge> <Badge>Postman</Badge>
+          </Group>
         </List>
       </Paper>
 
       <Paper p={10} radius="sm" withBorder>
-        <Title order={2}>Application Developer</Title>
+        <Group justify="space-between">
+          <Title order={2}>Application Developer</Title>
+          <Group>
+            <ActionIcon
+              variant="transparent"
+              component="a"
+              href="https://github.com/garyfan1/ppr"
+              target="_blank"
+            >
+              <IconBrandGithub></IconBrandGithub>
+            </ActionIcon>
+            <ActionIcon
+              variant="transparent"
+              component="a"
+              href="https://www.bcregistry.gov.bc.ca/ppr-marketing/"
+              target="_blank"
+            >
+              <IconExternalLink></IconExternalLink>
+            </ActionIcon>
+          </Group>
+        </Group>
         <Text>Government of British Columbia</Text>
         <List>
           <List.Item>
@@ -51,7 +95,9 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             Utilized Git for version control, ensuring efficient cooperation,
             code management, and seamless code deployments.
           </List.Item>
+          <Group>
           <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
+          </Group>
         </List>
       </Paper>
 
@@ -67,7 +113,6 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           <Badge>Angular</Badge>
         </List>
       </Paper>
-      
     </Stack>
   );
 });
