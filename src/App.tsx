@@ -3,9 +3,9 @@ import { AppShell, Button, Container, Group, Space } from "@mantine/core";
 import "@mantine/core/styles.css";
 
 import { MantineProvider, createTheme } from "@mantine/core";
-import AboutMe from "./components/aboutMe";
-import Experience from "./components/experience";
-import Projects from "./components/projects";
+import AboutMe from "./sections/aboutMe";
+import Experience from "./sections/experience";
+import Projects from "./sections/projects";
 import { useScrollIntoView } from "@mantine/hooks";
 
 function App() {

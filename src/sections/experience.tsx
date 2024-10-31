@@ -1,5 +1,4 @@
 import {
-  Paper,
   Title,
   Text,
   Stack,
@@ -10,13 +9,14 @@ import {
 } from "@mantine/core";
 import { forwardRef } from "react";
 import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";
+import MyPaper from "../components/myPaper";
 
 const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
   return (
     <Stack>
       <Title ref={experienceRef}>Work Experience</Title>
 
-      <Paper p={10} radius="sm" withBorder>
+      <MyPaper>
         <Group justify="space-between">
           <Title order={2}>Back-End Developer</Title>
 
@@ -51,13 +51,13 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             collaboration.
           </List.Item>
           <Group>
-          <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>
-          <Badge>MySQL</Badge> <Badge>Postman</Badge>
+            <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>
+            <Badge>MySQL</Badge> <Badge>Postman</Badge>
           </Group>
         </List>
-      </Paper>
+      </MyPaper>
 
-      <Paper p={10} radius="sm" withBorder>
+      <MyPaper>
         <Group justify="space-between">
           <Title order={2}>Application Developer</Title>
           <Group>
@@ -96,12 +96,12 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             code management, and seamless code deployments.
           </List.Item>
           <Group>
-          <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
+            <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
           </Group>
         </List>
-      </Paper>
+      </MyPaper>
 
-      <Paper p={10} radius="sm" withBorder>
+      <MyPaper>
         <Title order={2}>Software Designer</Title>
         <Text>Schneider Electric</Text>
         <List>
@@ -112,7 +112,7 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           </List.Item>
           <Badge>Angular</Badge>
         </List>
-      </Paper>
+      </MyPaper>
     </Stack>
   );
 });
