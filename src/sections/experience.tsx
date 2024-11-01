@@ -30,7 +30,6 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           </ActionIcon>
         </Group>
         <Text>Lychee Technology</Text>
-
         <List>
           <List.Item>
             Responsible for backend development using Django Rest Framework for
@@ -50,11 +49,9 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             RESTful APIs to ensure functionality and facilitate team
             collaboration.
           </List.Item>
-          <Group>
-            <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>
-            <Badge>MySQL</Badge> <Badge>Postman</Badge>
-          </Group>
         </List>
+        <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>{" "}
+        <Badge>MySQL</Badge> <Badge>Postman</Badge>
       </MyPaper>
 
       <MyPaper>
@@ -95,23 +92,22 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             Utilized Git for version control, ensuring efficient cooperation,
             code management, and seamless code deployments.
           </List.Item>
-          <Group>
-            <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
-          </Group>
         </List>
+        <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
       </MyPaper>
 
       <MyPaper>
         <Title order={2}>Software Designer</Title>
         <Text>Schneider Electric</Text>
+
         <List>
           <List.Item>
             Migrated an AngularJS codebase to latest the Angular, optimizing
             performance, enhancing security, and ensuring code scalability for a
             large-scale application.
           </List.Item>
-          <Badge>Angular</Badge>
         </List>
+        <Badge>Angular</Badge>
       </MyPaper>
     </Stack>
   );

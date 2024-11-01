@@ -1,4 +1,4 @@
-import { AppShell, Button, Container, Group, Space } from "@mantine/core";
+import { AppShell, Button, Container, Group, Space, Title, Text, ListItem } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
@@ -6,11 +6,27 @@ import { MantineProvider, createTheme } from "@mantine/core";
 import AboutMe from "./sections/aboutMe";
 import Experience from "./sections/experience";
 import Projects from "./sections/projects";
+import MyHeader from "./header";
 import { useScrollIntoView } from "@mantine/hooks";
 
 function App() {
   const theme = createTheme({
     /** Put your mantine theme override here */
+    lineHeights: {
+      "md": "1.6",
+    },
+    components: {
+      Text: Text.extend({
+        defaultProps: {
+          c: "#1E1E1E"
+        }
+      }),
+      ListItem: ListItem.extend({
+        defaultProps: {
+          c: "#1E1E1E"
+        }
+      }),
+    },
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
@@ -32,29 +48,22 @@ function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <AppShell header={{ height: 80 }} padding="md">
+      <AppShell header={{ height: 80 }} padding="lg">
+
         <AppShell.Header p="xl">
-        <Container size="sm">
-          <Group grow justify="center">
-            <Button onClick={scrollToAboutMe} variant="transparent">
-              About Me
-            </Button>
-            <Button onClick={scrollToExperience} variant="transparent">
-              Experience
-            </Button>
-            <Button onClick={scrollToProjects} variant="transparent">
-              Projects
-            </Button>
-          </Group>
-          </Container>
+          <MyHeader
+            scrollToAboutMe={scrollToAboutMe}
+            scrollToExperience={scrollToExperience}
+            scrollToProjects={scrollToProjects}
+          />
         </AppShell.Header>
 
         <AppShell.Main>
           <Container size="sm">
             <AboutMe ref={aboutMeRef} />
-            <Space h={20}/>
+            <Space h={32} />
             <Experience ref={experieceRef} />
-            <Space h={20}/>
+            <Space h={32} />
             <Projects ref={projectsRef} />
           </Container>
         </AppShell.Main>
