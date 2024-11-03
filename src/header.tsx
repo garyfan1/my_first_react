@@ -5,13 +5,25 @@ const MyHeader = ({ ...props }) => {
   return (
     <Container size="sm">
       <Group px={20} justify="space-between">
-        <Button size="compact-lg" onClick={scrollToAboutMe} variant="transparent">
+        <Button
+          size="compact-lg"
+          onClick={scrollToAboutMe}
+          variant="transparent"
+        >
           About Me
         </Button>
-        <Button size="compact-lg" onClick={scrollToExperience} variant="transparent">
+        <Button
+          size="compact-lg"
+          onClick={scrollToExperience}
+          variant="transparent"
+        >
           Experience
         </Button>
-        <Button size="compact-lg" onClick={scrollToProjects} variant="transparent">
+        <Button
+          size="compact-lg"
+          onClick={scrollToProjects}
+          variant="transparent"
+        >
           Projects
         </Button>
       </Group>

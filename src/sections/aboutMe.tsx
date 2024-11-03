@@ -5,6 +5,7 @@ const AboutMe = forwardRef<HTMLHeadingElement>((_, aboutMeRef) => {
   return (
     <>
       <Title ref={aboutMeRef}>About Me</Title>
+      <Space h={10} />
       <Text>
         I initially planned to major in civil engineering, but while taking an
         elective course in C++, I developed a strong interest in coding and
