@@ -13,7 +13,7 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
           <ActionIcon
             variant="transparent"
             component="a"
-            href="#"
+            href="https://github.com/garyfan1/my_first_react/"
             target="_blank"
           >
             <IconBrandGithub></IconBrandGithub>
