@@ -13,18 +13,18 @@ function App() {
   const theme = createTheme({
     /** Put your mantine theme override here */
     lineHeights: {
-      "md": "1.6",
+      md: "1.6",
     },
     components: {
       Text: Text.extend({
         defaultProps: {
-          c: "#1E1E1E"
-        }
+          c: "#1E1E1E",
+        },
       }),
       ListItem: ListItem.extend({
         defaultProps: {
-          c: "#1E1E1E"
-        }
+          c: "#1E1E1E",
+        },
       }),
     },
   });
@@ -48,9 +48,8 @@ function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <AppShell header={{ height: 80 }} padding="lg">
-
-        <AppShell.Header p="xl">
+      <AppShell header={{ height: { base: 50, sm: 80 } }} padding="lg">
+        <AppShell.Header p={{ base: "md", sm: "xl" }}>
           <MyHeader
             scrollToAboutMe={scrollToAboutMe}
             scrollToExperience={scrollToExperience}
