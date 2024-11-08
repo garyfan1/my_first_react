@@ -3,6 +3,7 @@ import { AppShell, Container, Space, Text, ListItem } from "@mantine/core";
 import "@mantine/core/styles.css";
 
 import { MantineProvider, createTheme } from "@mantine/core";
+import Hello from "./sections/hello"
 import AboutMe from "./sections/aboutMe";
 import Experience from "./sections/experience";
 import Projects from "./sections/projects";
@@ -59,6 +60,7 @@ function App() {
 
         <AppShell.Main>
           <Container size="sm">
+            <Hello/>
             <AboutMe ref={aboutMeRef} />
             <Space h={32} />
             <Experience ref={experieceRef} />
