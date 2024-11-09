@@ -1,4 +1,4 @@
-import { AppShell, Container, Space, Text, ListItem, rem, em } from "@mantine/core";
+import { AppShell, Container, Space, Text, ListItem} from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
