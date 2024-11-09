@@ -6,6 +6,7 @@ import {
   Badge,
   ActionIcon,
   Group,
+  Container,
 } from "@mantine/core";
 import { forwardRef } from "react";
 import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";
@@ -30,6 +31,7 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           </ActionIcon>
         </Group>
         <Text>Lychee Technology</Text>
+        <Container p="0 16 0 0">
         <List>
           <List.Item>
             Responsible for backend development using Django Rest Framework for
@@ -50,6 +52,7 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             collaboration.
           </List.Item>
         </List>
+        </Container>
         <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>{" "}
         <Badge>MySQL</Badge> <Badge>Postman</Badge>
       </MyPaper>
@@ -77,6 +80,8 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           </Group>
         </Group>
         <Text>Government of British Columbia</Text>
+        <Container p="0 16 0 0">
+
         <List>
           <List.Item>
             Developed responsive and interactive user interfaces using Vue.js
@@ -93,12 +98,14 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             code management, and seamless code deployments.
           </List.Item>
         </List>
+        </Container>
         <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
       </MyPaper>
 
       <MyPaper>
         <Title order={2}>Software Designer</Title>
         <Text>Schneider Electric</Text>
+        <Container p="0 16 0 0">
 
         <List>
           <List.Item>
@@ -107,6 +114,7 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
             large-scale application.
           </List.Item>
         </List>
+        </Container>
         <Badge>Angular</Badge>
       </MyPaper>
     </Stack>

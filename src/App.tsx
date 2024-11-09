@@ -1,4 +1,4 @@
-import { AppShell, Container, Space, Text, ListItem } from "@mantine/core";
+import { AppShell, Container, Space, Text, ListItem, rem, em } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
@@ -60,7 +60,9 @@ function App() {
 
         <AppShell.Main>
           <Container size="sm">
+          <Space h={32} />
             <Hello/>
+            <Space h={256} />
             <AboutMe ref={aboutMeRef} />
             <Space h={32} />
             <Experience ref={experieceRef} />
