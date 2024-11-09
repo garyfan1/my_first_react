@@ -49,8 +49,8 @@ function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <AppShell header={{ height: { base: 50, sm: 80 } }} padding="lg">
-        <AppShell.Header p={{ base: "md", sm: "xl" }}>
+      <AppShell header={{ height: 60 }} padding="md">
+        <AppShell.Header>
           <MyHeader
             scrollToAboutMe={scrollToAboutMe}
             scrollToExperience={scrollToExperience}
@@ -59,8 +59,6 @@ function App() {
         </AppShell.Header>
 
         <AppShell.Main>
-          <Container size="sm">
-          <Space h={32} />
             <Hello/>
             <Space h={256} />
             <AboutMe ref={aboutMeRef} />
@@ -68,7 +66,6 @@ function App() {
             <Experience ref={experieceRef} />
             <Space h={32} />
             <Projects ref={projectsRef} />
-          </Container>
         </AppShell.Main>
       </AppShell>
     </MantineProvider>
