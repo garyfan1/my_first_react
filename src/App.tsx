@@ -1,9 +1,17 @@
-import { AppShell, Container, Space, Text, ListItem} from "@mantine/core";
+import {
+  AppShell,
+  Container,
+  Space,
+  Text,
+  ListItem,
+  List,
+  rem,
+} from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
 import { MantineProvider, createTheme } from "@mantine/core";
-import Hello from "./sections/hello"
+import Hello from "./sections/hello";
 import AboutMe from "./sections/aboutMe";
 import Experience from "./sections/experience";
 import Projects from "./sections/projects";
@@ -15,6 +23,9 @@ function App() {
     /** Put your mantine theme override here */
     lineHeights: {
       md: "1.6",
+    },
+    fontSizes: {
+      md: rem(18)
     },
     components: {
       Text: Text.extend({
@@ -49,7 +60,7 @@ function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <AppShell header={{ height: 60 }} padding="md">
+      <AppShell header={{ height: 64 }} padding={{ base: 32, lg: 64 }}>
         <AppShell.Header>
           <MyHeader
             scrollToAboutMe={scrollToAboutMe}
@@ -59,13 +70,15 @@ function App() {
         </AppShell.Header>
 
         <AppShell.Main>
-            <Hello/>
-            <Space h={256} />
-            <AboutMe ref={aboutMeRef} />
-            <Space h={32} />
-            <Experience ref={experieceRef} />
-            <Space h={32} />
-            <Projects ref={projectsRef} />
+          <Space h={64} />
+          <Hello />
+          <Space h={256} />
+          <AboutMe ref={aboutMeRef} />
+          <Space h={128} />
+          <Experience ref={experieceRef} />
+          <Space h={128} />
+          <Projects ref={projectsRef} />
+          <Space h={128} />
         </AppShell.Main>
       </AppShell>
     </MantineProvider>

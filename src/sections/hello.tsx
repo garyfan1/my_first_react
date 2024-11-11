@@ -1,20 +1,21 @@
-import { ActionIcon, Group, Space, Title } from "@mantine/core";
+import { ActionIcon, Container, Flex, Group, Space, Title } from "@mantine/core";
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 const Hello = () => {
   return (
     <>
-      <Title order={1}>Hello!</Title>
-      <Space h={40}/>
-      <Title order={1}>I'm Gary Fan</Title>
-      <Space h={40}/>
-      <Title order={1}>
+    <Flex justify="flex-start">
+    <Container w="70%" pl={12} ml={0}>
+      <Title mb={40} order={1}>Hello!</Title>
+      <Title mb={40} order={1}>I'm Gary Fan</Title>
+      <Title mb={40} order={1}>
         A software engineer specializing in web development and backend
         solutions, focused on building scalable and efficient applications with
         technologies like Django, Vue.js, Angular, and AWS.
       </Title>
-      <Space h={40}/>
+    </Container>
+    </Flex>
 
-    <Group gap="sm">
+    <Group pl={12} ml={0} gap="sm">
     <Title order={3}>My Links</Title>
       <ActionIcon
         variant="transparent"

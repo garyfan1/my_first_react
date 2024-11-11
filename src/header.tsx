@@ -4,7 +4,7 @@ const MyHeader = ({ ...props }) => {
   const { scrollToAboutMe, scrollToExperience, scrollToProjects } = props;
   return (
     <>
-        <Group p={20}>
+        <Group ml={0} pt={16} pl={{base:32, lg:64}}>
           <Button
             size="compact-lg"
             onClick={scrollToAboutMe}
