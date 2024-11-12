@@ -12,7 +12,7 @@ function MyPaper({ children, ...props }: MyPaperProps) {
   return (
     <Paper
       ref={ref}
-      p={10}
+      px={10}
       radius="sm"
       style={{ transition: "box-shadow 0.5s" }}
       withBorder

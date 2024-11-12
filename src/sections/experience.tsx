@@ -7,6 +7,7 @@ import {
   ActionIcon,
   Group,
   Container,
+  Grid,
 } from "@mantine/core";
 import { forwardRef } from "react";
 import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";
@@ -14,12 +15,19 @@ import MyPaper from "../components/myPaper";
 
 const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
   return (
+    <>
+    <Container size="80%">
+    <Grid>
+      <Grid.Col span={2}>
+    <Title order={3} ref={experienceRef}>Experience</Title>
+    </Grid.Col>
+    <Grid.Col span={10}>
+
     <Stack>
-      <Title ref={experienceRef}>Work Experience</Title>
 
       <MyPaper>
         <Group justify="space-between">
-          <Title order={2}>Back-End Developer</Title>
+          <Title order={3}>Back-End Developer</Title>
 
           <ActionIcon
             variant="transparent"
@@ -53,13 +61,15 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           </List.Item>
         </List>
         </Container>
-        <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>{" "}
+        <Group my={10} gap={10}>
+        <Badge>Django</Badge> <Badge>Django Rest Framework</Badge>
         <Badge>MySQL</Badge> <Badge>Postman</Badge>
+        </Group>
       </MyPaper>
 
       <MyPaper>
         <Group justify="space-between">
-          <Title order={2}>Application Developer</Title>
+          <Title order={3}>Application Developer</Title>
           <Group>
             <ActionIcon
               variant="transparent"
@@ -99,11 +109,14 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           </List.Item>
         </List>
         </Container>
+        <Group my={10} gap={10}>
+
         <Badge>Vue.js</Badge> <Badge>Vuetify</Badge>
+        </Group>
       </MyPaper>
 
       <MyPaper>
-        <Title order={2}>Software Designer</Title>
+        <Title order={3}>Software Designer</Title>
         <Text>Schneider Electric</Text>
         <Container p="0 16 0 0">
 
@@ -115,9 +128,14 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
           </List.Item>
         </List>
         </Container>
-        <Badge>Angular</Badge>
+        <Badge my={10}>Angular</Badge>
       </MyPaper>
     </Stack>
+    </Grid.Col>
+
+    </Grid>
+    </Container>
+    </>
   );
 });
 
