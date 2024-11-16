@@ -20,9 +20,14 @@ const Timeline = ({ start_date, end_date }: TimelineProps) => {
           {start_date}
         </Text>
         <Center style={{ height: "100%" }}>
-          <div
-            style={{ border: "1px solid black", height: "100%", width: "1px" }}
-          ></div>
+          <span
+            style={{
+              height: "100%",
+              width: "2px",
+              backgroundColor: "var(--mantine-color-dark-6)",
+              borderRadius: "10px",
+            }}
+          ></span>
         </Center>
         <Text mt={5} size="sm">
           {end_date}
