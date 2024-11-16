@@ -1,4 +1,4 @@
-import { Container, Group, Button, Flex } from "@mantine/core";
+import { Group, Button } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 
 const MyHeader = ({ ...props }) => {
