@@ -1,10 +1,8 @@
 import {
   AppShell,
-  Container,
   Space,
   Text,
   ListItem,
-  List,
   rem,
 } from "@mantine/core";
 

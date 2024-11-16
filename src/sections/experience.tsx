@@ -8,10 +8,7 @@ import {
   Group,
   Container,
   Grid,
-  Divider,
   Flex,
-  Center,
-  Space,
 } from "@mantine/core";
 import { forwardRef } from "react";
 import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";

@@ -1,4 +1,4 @@
-import { ActionIcon, Container, Flex, Group, Space, Title } from "@mantine/core";
+import { ActionIcon, Container, Flex, Group, Title } from "@mantine/core";
 import { IconBrandGithub, IconBrandLinkedin } from "@tabler/icons-react";
 const Hello = () => {
   return (

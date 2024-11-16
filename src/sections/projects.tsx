@@ -7,7 +7,6 @@ import {
   Group,
   Container,
   Grid,
-  GridCol,
 } from "@mantine/core";
 import { forwardRef } from "react";
 import MyPaper from "../components/myPaper";
