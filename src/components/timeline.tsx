@@ -24,7 +24,7 @@ const Timeline = ({ start_date, end_date }: TimelineProps) => {
             style={{
               height: "100%",
               width: "2px",
-              backgroundColor: "var(--mantine-color-dark-6)",
+              backgroundColor: "var(--mantine-color-dark-text)",
               borderRadius: "10px",
             }}
           ></span>

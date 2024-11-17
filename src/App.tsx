@@ -15,6 +15,7 @@ import Experience from "./sections/experience";
 import Projects from "./sections/projects";
 import MyHeader from "./header";
 import { useScrollIntoView } from "@mantine/hooks";
+import Footer from "./sections/footer";
 
 function App() {
   const theme = createTheme({
@@ -24,18 +25,6 @@ function App() {
     },
     fontSizes: {
       md: rem(18)
-    },
-    components: {
-      Text: Text.extend({
-        defaultProps: {
-          c: "#1E1E1E",
-        },
-      }),
-      ListItem: ListItem.extend({
-        defaultProps: {
-          c: "#1E1E1E",
-        },
-      }),
     },
   });
 
@@ -57,7 +46,7 @@ function App() {
   };
 
   return (
-    <MantineProvider theme={theme}>
+    <MantineProvider theme={theme} defaultColorScheme="dark">
       <AppShell header={{ height: 64 }} padding={{ base: 32, lg: 64 }}>
         <AppShell.Header>
           <MyHeader
@@ -77,6 +66,7 @@ function App() {
           <Space h={128} />
           <Projects ref={projectsRef} />
           <Space h={128} />
+          <Footer/>
         </AppShell.Main>
       </AppShell>
     </MantineProvider>
