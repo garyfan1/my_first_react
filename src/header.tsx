@@ -1,12 +1,17 @@
-import { Group, Button, Flex, Switch, useMantineColorScheme } from "@mantine/core";
+import {
+  Group,
+  Button,
+  Flex,
+  Switch,
+  useMantineColorScheme,
+} from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { IconMoon, IconSun } from "@tabler/icons-react";
-import { flushSync } from "react-dom";
 
 const MyHeader = ({ ...props }) => {
   const { scrollToAboutMe, scrollToExperience, scrollToProjects } = props;
   const [_, scrollTo] = useWindowScroll();
-  const {toggleColorScheme} = useMantineColorScheme();
+  const { toggleColorScheme } = useMantineColorScheme();
 
   return (
     <>
@@ -55,6 +60,7 @@ const MyHeader = ({ ...props }) => {
           offLabel={<IconMoon size="18px" />}
           onChange={toggleColorScheme}
         />
+        {/*BUG*/}
       </Flex>
     </>
   );
