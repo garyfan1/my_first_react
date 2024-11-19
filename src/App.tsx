@@ -1,9 +1,8 @@
 import {
   AppShell,
   Space,
-  Text,
-  ListItem,
   rem,
+  Burger,
 } from "@mantine/core";
 
 import "@mantine/core/styles.css";
@@ -13,9 +12,10 @@ import Hello from "./sections/hello";
 import AboutMe from "./sections/aboutMe";
 import Experience from "./sections/experience";
 import Projects from "./sections/projects";
-import MyHeader from "./header";
-import { useScrollIntoView } from "@mantine/hooks";
+import MyHeader from "./components/header";
+import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
 import Footer from "./sections/footer";
+import MyNavbar from "./components/navbar";
 
 function App() {
   const theme = createTheme({
@@ -24,7 +24,7 @@ function App() {
       md: "1.6",
     },
     fontSizes: {
-      md: rem(18)
+      md: rem(18),
     },
   });
 
@@ -45,16 +45,38 @@ function App() {
     scrollProjectsItoView({ alignment: "start" });
   };
 
+  const [opened, { toggle }] = useDisclosure(true);
+
   return (
     <MantineProvider theme={theme} defaultColorScheme="dark">
-      <AppShell header={{ height: 64 }} padding={{ base: 32, lg: 64 }}>
+      <AppShell
+        header={{ height: 64 }}
+        navbar={{
+          width: "100%",
+          breakpoint: "sm",
+          collapsed: { desktop: true, mobile: opened },
+        }}
+        padding={{ base: 20, md: 32, lg: 64 }}
+      >
         <AppShell.Header>
+          <Burger p={32} hiddenFrom="sm" onClick={toggle} opened={!opened} />
+
           <MyHeader
             scrollToAboutMe={scrollToAboutMe}
             scrollToExperience={scrollToExperience}
             scrollToProjects={scrollToProjects}
-          />
+            />
         </AppShell.Header>
+
+        <AppShell.Navbar p="md">
+        <MyNavbar
+          scrollToAboutMe={scrollToAboutMe}
+          scrollToExperience={scrollToExperience}
+          scrollToProjects={scrollToProjects}
+          toggle={toggle}
+        />
+
+        </AppShell.Navbar>
 
         <AppShell.Main>
           <Space h={64} />
@@ -66,7 +88,7 @@ function App() {
           <Space h={128} />
           <Projects ref={projectsRef} />
           <Space h={128} />
-          <Footer/>
+          <Footer />
         </AppShell.Main>
       </AppShell>
     </MantineProvider>

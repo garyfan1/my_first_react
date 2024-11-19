@@ -18,9 +18,10 @@ const MyHeader = ({ ...props }) => {
       <Flex
         ml={0}
         pt={16}
-        px={{ base: 32, lg: 64 }}
+        px={{ base: 20, md: 32, lg: 64 }}
         justify="space-between"
         align="center"
+        visibleFrom="sm"
       >
         <Group>
           <Button
