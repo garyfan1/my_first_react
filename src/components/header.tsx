@@ -4,6 +4,7 @@ import {
   Flex,
   Switch,
   useMantineColorScheme,
+  useComputedColorScheme,
 } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import { IconMoon, IconSun } from "@tabler/icons-react";
@@ -12,6 +13,7 @@ const MyHeader = ({ ...props }) => {
   const { scrollToAboutMe, scrollToExperience, scrollToProjects } = props;
   const [_, scrollTo] = useWindowScroll();
   const { toggleColorScheme } = useMantineColorScheme();
+  const curColorScheme = useComputedColorScheme();
 
   return (
     <>
@@ -55,13 +57,12 @@ const MyHeader = ({ ...props }) => {
         </Group>
 
         <Switch
-          defaultChecked={false}
+          defaultChecked={curColorScheme === "light" ? true : false}
           size="md"
           onLabel={<IconSun size="18px" />}
           offLabel={<IconMoon size="18px" />}
           onChange={toggleColorScheme}
         />
-        {/*BUG*/}
       </Flex>
     </>
   );
