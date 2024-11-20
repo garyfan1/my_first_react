@@ -18,14 +18,17 @@ import Footer from "./sections/footer";
 import MyNavbar from "./components/navbar";
 
 function App() {
+
   const theme = createTheme({
     /** Put your mantine theme override here */
     lineHeights: {
       md: "1.6",
     },
     fontSizes: {
+      xs: rem(12),
+      sm: rem(14),
       md: rem(18),
-    },
+    }
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
@@ -75,7 +78,6 @@ function App() {
           scrollToProjects={scrollToProjects}
           toggle={toggle}
         />
-
         </AppShell.Navbar>
 
         <AppShell.Main>
