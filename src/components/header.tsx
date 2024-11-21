@@ -1,6 +1,7 @@
 import { Group, Button, Flex } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import ColorSchemeSwitch from "./colorSchemeSwitch";
+import classes from "./myHeader.module.css"
 
 const MyHeader = ({ ...props }) => {
   const { scrollToAboutMe, scrollToExperience, scrollToProjects } = props;
@@ -21,6 +22,7 @@ const MyHeader = ({ ...props }) => {
             size="compact-lg"
             onClick={() => scrollTo({ y: 0 })}
             variant="transparent"
+            classNames={{root:classes.button}}
           >
             Home
           </Button>

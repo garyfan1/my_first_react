@@ -1,0 +1,7 @@
+.button {
+  transition: all 0.3s;
+
+  &:hover {
+    border-bottom: 3px solid var(--mantine-color-blue-filled);
+  }
+}
