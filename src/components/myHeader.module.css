@@ -1,7 +1,6 @@
-.button {
-  transition: all 0.3s;
+.buttonRoot:hover .buttonInner {
+  transition: all 0.2s;
 
-  &:hover {
-    border-bottom: 3px solid var(--mantine-color-blue-filled);
-  }
+  border-bottom: 2px solid var(--mantine-color-blue-filled);
+  
 }

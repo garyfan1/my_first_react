@@ -1,7 +1,7 @@
 import { Group, Button, Flex } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
 import ColorSchemeSwitch from "./colorSchemeSwitch";
-import classes from "./myHeader.module.css"
+import classes from "./myHeader.module.css";
 
 const MyHeader = ({ ...props }) => {
   const { scrollToAboutMe, scrollToExperience, scrollToProjects } = props;
@@ -22,7 +22,10 @@ const MyHeader = ({ ...props }) => {
             size="compact-lg"
             onClick={() => scrollTo({ y: 0 })}
             variant="transparent"
-            classNames={{root:classes.button}}
+            classNames={{
+              root: classes.buttonRoot,
+              inner: classes.buttonInner,
+            }}
           >
             Home
           </Button>
@@ -30,6 +33,10 @@ const MyHeader = ({ ...props }) => {
             size="compact-lg"
             onClick={scrollToAboutMe}
             variant="transparent"
+            classNames={{
+              root: classes.buttonRoot,
+              inner: classes.buttonInner,
+            }}
           >
             About Me
           </Button>
@@ -37,6 +44,10 @@ const MyHeader = ({ ...props }) => {
             size="compact-lg"
             onClick={scrollToExperience}
             variant="transparent"
+            classNames={{
+              root: classes.buttonRoot,
+              inner: classes.buttonInner,
+            }}
           >
             Experience
           </Button>
@@ -44,13 +55,16 @@ const MyHeader = ({ ...props }) => {
             size="compact-lg"
             onClick={scrollToProjects}
             variant="transparent"
+            classNames={{
+              root: classes.buttonRoot,
+              inner: classes.buttonInner,
+            }}
           >
             Projects
           </Button>
         </Group>
 
-        <ColorSchemeSwitch/>
-
+        <ColorSchemeSwitch />
       </Flex>
     </>
   );
