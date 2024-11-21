@@ -1,4 +1,4 @@
-import { AppShell, Space, rem, Burger } from "@mantine/core";
+import { AppShell, Space, rem, Burger, Flex } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
@@ -11,6 +11,7 @@ import MyHeader from "./components/header";
 import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
 import Footer from "./sections/footer";
 import MyNavbar from "./components/navbar";
+import ColorSchemeSwitch from "./components/colorSchemeSwitch";
 
 function App() {
   const theme = createTheme({
@@ -56,8 +57,15 @@ function App() {
         padding={{ base: 0, sm: 20, md: 32, lg: 64 }}
       >
         <AppShell.Header>
-          <Burger p={32} hiddenFrom="sm" onClick={toggle} opened={!opened} />
-
+          <Flex
+            p="16 26 0 26"
+            hiddenFrom="sm"
+            justify="space-between"
+            align="center"
+          >
+            <Burger onClick={toggle} opened={!opened} />
+            <ColorSchemeSwitch />
+          </Flex>
           <MyHeader
             scrollToAboutMe={scrollToAboutMe}
             scrollToExperience={scrollToExperience}
