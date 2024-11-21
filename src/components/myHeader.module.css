@@ -1,3 +1,7 @@
+.buttonInner {
+  border: 2px solid transparent;
+}
+
 .buttonRoot:hover .buttonInner {
   transition: all 0.2s;
 
