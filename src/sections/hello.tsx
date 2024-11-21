@@ -27,7 +27,11 @@ const Hello = () => {
   return (
     <>
       <Grid>
-        <Grid.Col ml={12} span={{ base: 11, md: 9 }}>
+        <Grid.Col
+          mt={{ base: 30, sm: 0 }}
+          ml={{ base: 30, sm: 12 }}
+          span={{ base: 11, md: 9 }}
+        >
           <Title mb={40} order={titleOrder}>
             Hello!
           </Title>
@@ -43,7 +47,7 @@ const Hello = () => {
         <Grid.Col span={"auto"}></Grid.Col>
       </Grid>
 
-      <Group ml={12} gap="sm">
+      <Group ml={{ base: 30, sm: 12 }} gap="sm">
         <Title order={myLinksOrder}>My Links</Title>
         <ActionIcon
           variant="transparent"

@@ -1,4 +1,4 @@
-import { Flex, Center, Text } from "@mantine/core";
+import { Flex, Center, Text, useMatches } from "@mantine/core";
 
 interface TimelineProps {
   start_date: String;
@@ -6,17 +6,25 @@ interface TimelineProps {
 }
 
 const Timeline = ({ start_date, end_date }: TimelineProps) => {
+  const timelineMinWidth = useMatches({
+    base: 60,
+    md: 70
+  })
+  const textSize = useMatches({
+    base: "xs" ,
+    md: "sm"
+  })
   return (
     <>
       <Flex
         py={5}
         mx={10}
-        miw={70}
+        miw={timelineMinWidth}
         align="center"
         justify="space-between"
         direction="column"
       >
-        <Text mb={5} size="sm">
+        <Text mb={5} size={textSize}>
           {start_date}
         </Text>
         <Center style={{ height: "100%" }}>
@@ -29,7 +37,7 @@ const Timeline = ({ start_date, end_date }: TimelineProps) => {
             }}
           ></span>
         </Center>
-        <Text mt={5} size="sm">
+        <Text mt={5} size={textSize}>
           {end_date}
         </Text>
       </Flex>

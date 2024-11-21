@@ -1,9 +1,4 @@
-import {
-  AppShell,
-  Space,
-  rem,
-  Burger,
-} from "@mantine/core";
+import { AppShell, Space, rem, Burger } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
@@ -18,7 +13,6 @@ import Footer from "./sections/footer";
 import MyNavbar from "./components/navbar";
 
 function App() {
-
   const theme = createTheme({
     /** Put your mantine theme override here */
     lineHeights: {
@@ -28,7 +22,7 @@ function App() {
       xs: rem(12),
       sm: rem(14),
       md: rem(18),
-    }
+    },
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
@@ -59,7 +53,7 @@ function App() {
           breakpoint: "sm",
           collapsed: { desktop: true, mobile: opened },
         }}
-        padding={{ base: 20, md: 32, lg: 64 }}
+        padding={{ base: 0, sm: 20, md: 32, lg: 64 }}
       >
         <AppShell.Header>
           <Burger p={32} hiddenFrom="sm" onClick={toggle} opened={!opened} />
@@ -68,16 +62,16 @@ function App() {
             scrollToAboutMe={scrollToAboutMe}
             scrollToExperience={scrollToExperience}
             scrollToProjects={scrollToProjects}
-            />
+          />
         </AppShell.Header>
 
         <AppShell.Navbar p="md">
-        <MyNavbar
-          scrollToAboutMe={scrollToAboutMe}
-          scrollToExperience={scrollToExperience}
-          scrollToProjects={scrollToProjects}
-          toggle={toggle}
-        />
+          <MyNavbar
+            scrollToAboutMe={scrollToAboutMe}
+            scrollToExperience={scrollToExperience}
+            scrollToProjects={scrollToProjects}
+            toggle={toggle}
+          />
         </AppShell.Navbar>
 
         <AppShell.Main>
