@@ -24,6 +24,7 @@ function App() {
       sm: rem(14),
       md: rem(18),
     },
+    cursorType:"pointer", /* For switch cursor */
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
