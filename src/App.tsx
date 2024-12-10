@@ -28,7 +28,7 @@ function App() {
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
-    useScrollIntoView<HTMLHeadingElement>({ offset: 100 });
+    useScrollIntoView<HTMLDivElement>({ offset: 100 });
   const { scrollIntoView: scrollExperieceItoView, targetRef: experieceRef } =
     useScrollIntoView<HTMLDivElement>({ offset: 100 });
   const { scrollIntoView: scrollProjectsItoView, targetRef: projectsRef } =

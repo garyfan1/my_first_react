@@ -55,7 +55,7 @@ const Experience = forwardRef<HTMLDivElement>((_, experienceRef) => {
 
   return (
     <>
-      <Container mih={placeHolder? 1800:0} size={containerSize} ref={myMergedRef}>
+      <Container mih={placeHolder? 800:0} size={containerSize} ref={myMergedRef}>
         <Grid>
           <Grid.Col pl={{ base: 30, md: 8 }} span={{ base: 12, md: 2 }}>
             <Transition
