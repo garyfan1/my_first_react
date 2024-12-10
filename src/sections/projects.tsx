@@ -58,8 +58,13 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
                   </ActionIcon>
                 </Group>
                 <Text size={textSize}>
-                  Personal portfolio written in React. Using Mantine for UI,
-                  hosting on GitHub pages and Firebase.
+                  This project is my portfolio website built using React,
+                  which is also the one you are looking at right now! It leverages
+                  the Mantine library for an elegant and responsive UI design,
+                  ensuring accessibility and a modern user experience. The
+                  portfolio, hosted on Firebase Hosting, showcases my
+                  proficiency in building and deploying modern web applications
+                  using React and Firebase with fast and reliable performance.
                 </Text>
                 <Group my={10} gap={10}>
                   <MyBadge>React</MyBadge> <MyBadge>Mantine</MyBadge>{" "}
@@ -81,10 +86,13 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
                   </ActionIcon>
                 </Group>
                 <Text size={textSize}>
-                  A reminder developed with the Chalice framework and hosted on
-                  AWS Lambda, utilizing AWS DynamoDB for efficient user
-                  management. Set up events on AWS EventBridge to handle HTTP
-                  request methods, URLs, dateTime, and data payloads.
+                  A serverless reminder application built using the Chalice
+                  framework and hosted on AWS Lambda. This project uses AWS
+                  DynamoDB for robust and efficient user management and
+                  integrates with AWS EventBridge to manage event-driven
+                  workflows. It supports creating and scheduling events with
+                  customizable attributes, including HTTP request methods, URLs,
+                  dateTime, and data payloads.
                 </Text>
                 <Group my={10} gap={10}>
                   <MyBadge>AWS</MyBadge> <MyBadge>Chalice</MyBadge>
