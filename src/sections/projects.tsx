@@ -38,24 +38,28 @@ const Projects = forwardRef<HTMLDivElement>((_, projectsRef) => {
   const { ref, inViewport } = useInViewport();
   const myMergedRef = useMergedRef(projectsRef, ref);
 
-  const [mount, setMount] = useState(false)
+  const [mount, setMount] = useState(false);
+  const [placeHolder, setPlaceHolder] = useState(true);
 
   useEffect(() => {
-    if (inViewport&&!mount) {
+    if (inViewport && !mount) {
       setMount(true);
+      setTimeout(() => {
+        setPlaceHolder(false);
+      }, 400);
     }
   }, [inViewport]);
 
   return (
     <>
-      <Container size={containerSize} ref={myMergedRef}>
+      <Container
+        mih={placeHolder ? 800 : 0}
+        size={containerSize}
+        ref={myMergedRef}
+      >
         <Grid>
           <Grid.Col pl={{ base: 30, md: 8 }} span={{ base: 12, md: 2 }}>
-            <Transition
-              mounted={mount}
-              transition="fade-right"
-              duration={1000}
-            >
+            <Transition mounted={mount} transition="fade-right" duration={1000}>
               {(styles) => {
                 return (
                   <Title order={3} style={styles}>
