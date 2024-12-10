@@ -13,9 +13,9 @@ function MyPaper({ children, ...props }: MyPaperProps) {
     <Paper
       ref={ref}
       py={10}
-      px={{base:10, md:30}}
+      px={{ base: 10, md: 30 }}
       radius="lg"
-      style={{ transition: "box-shadow 0.5s", borderWidth: "3px"}}
+      style={{ transition: "box-shadow 0.5s", borderWidth: "3px" }}
       withBorder
       shadow={hovered ? "xl" : ""}
       {...props}

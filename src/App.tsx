@@ -32,7 +32,7 @@ function App() {
   const { scrollIntoView: scrollExperieceItoView, targetRef: experieceRef } =
     useScrollIntoView<HTMLHeadingElement>({ offset: 100 });
   const { scrollIntoView: scrollProjectsItoView, targetRef: projectsRef } =
-    useScrollIntoView<HTMLHeadingElement>({ offset: 100 });
+    useScrollIntoView<HTMLDivElement>({ offset: 100 });
 
   const scrollToAboutMe = () => {
     scrollAboutMeItoView({ alignment: "start" });
