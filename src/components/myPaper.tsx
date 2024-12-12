@@ -1,23 +1,27 @@
 import { Paper } from "@mantine/core";
-import { useHover } from "@mantine/hooks";
+import { useHover, useInViewport, useMergedRef } from "@mantine/hooks";
 import { ReactNode } from "react";
+import classes from "./fadeIn.module.css";
 
 interface MyPaperProps {
   children: ReactNode;
 }
 
 function MyPaper({ children, ...props }: MyPaperProps) {
-  const { ref, hovered } = useHover();
+  const { ref: hoverRef, hovered } = useHover();
+  const { ref: inViewportRef, inViewport } = useInViewport();
+
+  const myMergedRef = useMergedRef(hoverRef, inViewportRef);
 
   return (
     <Paper
-      ref={ref}
+      ref={myMergedRef}
       py={10}
-      px={{base:10, md:30}}
+      px={{ base: 10, md: 30 }}
       radius="lg"
-      style={{ transition: "box-shadow 0.5s", borderWidth: "3px"}}
       withBorder
       shadow={hovered ? "xl" : ""}
+      className={inViewport ? classes.fadeInPaper : classes.hiddenRight}
       {...props}
     >
       {children}

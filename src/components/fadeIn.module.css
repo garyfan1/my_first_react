@@ -1,0 +1,28 @@
+.hidden,
+.hiddenLeft,
+.hiddenRight {
+  opacity: 0;
+}
+
+.hiddenRight {
+  transform: translateX(30%);
+}
+
+.hiddenLeft {
+  transform: translateX(-30%);
+}
+
+.fadeIn,
+.fadeInPaper {
+  opacity: 1;
+}
+
+.fadeIn {
+  transition: all 0.8s;
+}
+
+.fadeInPaper {
+  border-width: 3px;
+  transition: transform ease-in-out 0.8s, opacity ease-in-out 0.8s,
+    box-shadow 0.5s;
+}

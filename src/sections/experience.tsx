@@ -17,6 +17,8 @@ import { IconExternalLink, IconBrandGithub } from "@tabler/icons-react";
 import MyPaper from "../components/myPaper";
 import Timeline from "../components/timeline";
 import MyBadge from "../components/myBadge";
+import { useInViewport, useMergedRef } from "@mantine/hooks";
+import classes from "../components/fadeIn.module.css"
 
 const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
   const containerSize = useMatches({
@@ -36,12 +38,17 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
     md: "md",
   });
 
+  const {ref, inViewport} = useInViewport();
+  const myMergedRef = useMergedRef(ref, experienceRef);
+
   return (
     <>
       <Container size={containerSize}>
         <Grid>
           <Grid.Col pl={{ base: 30, md: 8 }} span={{ base: 12, md: 2 }}>
-            <Title order={3} ref={experienceRef}>
+            <Title order={3} ref={myMergedRef} 
+              className={inViewport ? classes.fadeIn : classes.hiddenLeft}
+              >
               Experience
             </Title>
           </Grid.Col>

@@ -1,4 +1,6 @@
 import { Flex, Center, Text, useMatches } from "@mantine/core";
+import classes from "./fadeIn.module.css";
+import { useInViewport } from "@mantine/hooks";
 
 interface TimelineProps {
   start_date: String;
@@ -8,12 +10,14 @@ interface TimelineProps {
 const Timeline = ({ start_date, end_date }: TimelineProps) => {
   const timelineMinWidth = useMatches({
     base: 60,
-    md: 70
-  })
+    md: 70,
+  });
   const textSize = useMatches({
-    base: "xs" ,
-    md: "sm"
-  })
+    base: "xs",
+    md: "sm",
+  });
+  const { ref, inViewport } = useInViewport();
+
   return (
     <>
       <Flex
@@ -23,6 +27,8 @@ const Timeline = ({ start_date, end_date }: TimelineProps) => {
         align="center"
         justify="space-between"
         direction="column"
+        ref={ref}
+        className={inViewport ? classes.fadeIn : classes.hidden}
       >
         <Text mb={5} size={textSize}>
           {start_date}

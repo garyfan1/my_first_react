@@ -1,6 +1,9 @@
 import { Container, Grid, Text, Title, useMatches } from "@mantine/core";
 import { forwardRef } from "react";
 import MyPaper from "../components/myPaper";
+import { useInViewport, useMergedRef } from "@mantine/hooks";
+import classes from "../components/fadeIn.module.css"
+
 
 const AboutMe = forwardRef<HTMLHeadingElement>((_, aboutMeRef) => {
   const containerSize = useMatches({
@@ -13,12 +16,15 @@ const AboutMe = forwardRef<HTMLHeadingElement>((_, aboutMeRef) => {
     md: "md",
   });
 
+  const {ref, inViewport} = useInViewport();
+  const myMergedRef = useMergedRef(ref, aboutMeRef);
+
   return (
     <>
       <Container p={{ base: 0, md: 16 }} size={containerSize}>
         <Grid>
           <Grid.Col pl={{ base: 30, md: 8 }} span={{ base: 12, md: 2 }}>
-            <Title order={3} ref={aboutMeRef}>
+            <Title order={3} ref={myMergedRef} className={inViewport ? classes.fadeIn : classes.hiddenLeft}>
               About Me
             </Title>
           </Grid.Col>

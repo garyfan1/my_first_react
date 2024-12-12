@@ -10,10 +10,12 @@ import {
   TitleOrder,
   MantineSize,
 } from "@mantine/core";
-import { forwardRef } from "react";
+import { forwardRef, useEffect } from "react";
 import MyPaper from "../components/myPaper";
 import { IconBrandGithub } from "@tabler/icons-react";
 import MyBadge from "../components/myBadge";
+import { useInViewport, useMergedRef } from "@mantine/hooks";
+import classes from "../components/fadeIn.module.css";
 
 const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
   const containerSize = useMatches({
@@ -33,12 +35,19 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
     md: "md",
   });
 
+  const { ref, inViewport } = useInViewport();
+  const myMergedRef = useMergedRef(ref, projectsRef);
+
   return (
     <>
       <Container size={containerSize}>
         <Grid>
           <Grid.Col pl={{ base: 30, md: 8 }} span={{ base: 12, md: 2 }}>
-            <Title order={3} ref={projectsRef}>
+            <Title
+              order={3}
+              ref={myMergedRef}
+              className={inViewport ? classes.fadeIn : classes.hiddenLeft}
+            >
               Projects
             </Title>
           </Grid.Col>
@@ -58,9 +67,9 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
                   </ActionIcon>
                 </Group>
                 <Text size={textSize}>
-                  This project is my portfolio website built using React,
-                  which is also the one you are looking at right now! It leverages
-                  the Mantine library for an elegant and responsive UI design,
+                  This project is my portfolio website built using React, which
+                  is also the one you are looking at right now! It leverages the
+                  Mantine library for an elegant and responsive UI design,
                   ensuring accessibility and a modern user experience. The
                   portfolio, hosted on Firebase Hosting, showcases my
                   proficiency in building and deploying modern web applications
