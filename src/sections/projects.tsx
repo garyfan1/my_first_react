@@ -10,7 +10,7 @@ import {
   TitleOrder,
   MantineSize,
 } from "@mantine/core";
-import { forwardRef, useEffect } from "react";
+import { forwardRef } from "react";
 import MyPaper from "../components/myPaper";
 import { IconBrandGithub } from "@tabler/icons-react";
 import MyBadge from "../components/myBadge";

@@ -56,6 +56,7 @@ function App() {
           collapsed: { desktop: true, mobile: opened },
         }}
         padding={{ base: 0, sm: 20, md: 32, lg: 64 }}
+        style={{overflowX: "hidden"}}
       >
         <AppShell.Header>
           <Flex
