@@ -1,0 +1,11 @@
+.blink {
+  background-color: var(--mantine-color-text);
+  width: 3px;
+  animation: 1s blink steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    background-color: transparent;
+  }
+}
