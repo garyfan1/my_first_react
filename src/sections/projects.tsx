@@ -16,6 +16,7 @@ import { IconBrandGithub } from "@tabler/icons-react";
 import MyBadge from "../components/myBadge";
 import { useInViewport, useMergedRef } from "@mantine/hooks";
 import classes from "../components/fadeIn.module.css";
+import schedulerImg from "../assets/scheduler.png"
 
 const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
   const containerSize = useMatches({
@@ -81,7 +82,7 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
                 </Group>
               </MyPaper>
 
-              <MyPaper>
+              <MyPaper bgImg={schedulerImg}>
                 <Group justify="space-between">
                   <Title order={titleOrder}>Serverless Reminder</Title>
                   <ActionIcon
