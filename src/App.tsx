@@ -50,7 +50,11 @@ function App() {
 
   return (
     <MantineProvider theme={theme} defaultColorScheme="dark">
-      <Affix position={{ left: x, top: y }} style={{ pointerEvents: "none" }}>
+      <Affix
+        visibleFrom="md"
+        position={{ left: x, top: y }}
+        style={{ pointerEvents: "none" }}
+      >
         <Aurora />
       </Affix>
       <AppShell
