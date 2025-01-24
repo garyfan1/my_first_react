@@ -1,4 +1,4 @@
-import { AppShell, Space, rem, Burger, Flex } from "@mantine/core";
+import { AppShell, Space, rem, Burger, Flex, Affix } from "@mantine/core";
 
 import "@mantine/core/styles.css";
 
@@ -8,10 +8,11 @@ import AboutMe from "./sections/aboutMe";
 import Experience from "./sections/experience";
 import Projects from "./sections/projects";
 import MyHeader from "./components/header";
-import { useDisclosure, useScrollIntoView } from "@mantine/hooks";
+import { useDisclosure, useMouse, useScrollIntoView } from "@mantine/hooks";
 import Footer from "./sections/footer";
 import MyNavbar from "./components/navbar";
 import ColorSchemeSwitch from "./components/colorSchemeSwitch";
+import Aurora from "./components/aurora";
 
 function App() {
   const theme = createTheme({
@@ -24,7 +25,7 @@ function App() {
       sm: rem(14),
       md: rem(18),
     },
-    cursorType:"pointer", /* For switch cursor */
+    cursorType: "pointer" /* For switch cursor */,
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
@@ -45,9 +46,13 @@ function App() {
   };
 
   const [opened, { toggle }] = useDisclosure(true);
+  const { x, y } = useMouse();
 
   return (
     <MantineProvider theme={theme} defaultColorScheme="dark">
+      <Affix position={{ left: x, top: y }}>
+        <Aurora></Aurora>
+      </Affix>
       <AppShell
         header={{ height: 64 }}
         navbar={{
@@ -56,7 +61,7 @@ function App() {
           collapsed: { desktop: true, mobile: opened },
         }}
         padding={{ base: 0, sm: 20, md: 32, lg: 64 }}
-        style={{overflow: "hidden"}}
+        style={{ overflow: "hidden" }}
       >
         <AppShell.Header>
           <Flex
