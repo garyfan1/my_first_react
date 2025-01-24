@@ -16,7 +16,9 @@ import { IconBrandGithub } from "@tabler/icons-react";
 import MyBadge from "../components/myBadge";
 import { useInViewport, useMergedRef } from "@mantine/hooks";
 import classes from "../components/fadeIn.module.css";
-import schedulerImg from "../assets/scheduler.png"
+import schedulerImg from "../assets/scheduler.png";
+import portfolioImg from "../assets/portfolio.png";
+import checkerImg from "../assets/badminton_checker.png"
 
 const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
   const containerSize = useMatches({
@@ -54,7 +56,7 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 10 }}>
             <Stack>
-              <MyPaper>
+              <MyPaper bgImg={portfolioImg}>
                 <Group justify="space-between">
                   <Title order={titleOrder}>My Portfolio</Title>
                   <ActionIcon
@@ -109,7 +111,7 @@ const Projects = forwardRef<HTMLHeadingElement>((_, projectsRef) => {
                 </Group>
               </MyPaper>
 
-              <MyPaper>
+              <MyPaper bgImg={checkerImg}>
                 <Group justify="space-between">
                   <Title order={titleOrder}>Badminton Court Reminder</Title>
                   <ActionIcon
