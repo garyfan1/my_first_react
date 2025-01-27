@@ -34,7 +34,7 @@ const AboutMe = forwardRef<HTMLHeadingElement>((_, aboutMeRef) => {
           </Grid.Col>
           <Grid.Col pl={18} span={{ base: 12, md: 10 }}>
             <MyPaper>
-              <Text size={textSize} style={{ whiteSpace: "pre-wrap" }}>
+              <Text size={textSize} style={{ whiteSpace: "pre-wrap"}}>
                 I initially planned to major in civil engineering, but while
                 taking an elective course in C++, I developed a strong interest
                 in coding and decided to switch my focus to computer science.

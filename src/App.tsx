@@ -26,7 +26,7 @@ function App() {
       md: rem(18),
     },
     cursorType: "pointer" /* For switch cursor */,
-    primaryColor: "teal"
+    primaryColor: "teal",
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
@@ -95,7 +95,6 @@ function App() {
         </AppShell.Navbar>
 
         <AppShell.Main>
-          <Space h={64} />
           <Hello />
           <Space h={256} />
           <AboutMe ref={aboutMeRef} />
