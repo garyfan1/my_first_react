@@ -3,7 +3,6 @@ import { forwardRef } from "react";
 import MyPaper from "../components/myPaper";
 import { useInViewport, useMergedRef } from "@mantine/hooks";
 import classes from "../components/fadeIn.module.css";
-import Terminal from "../components/terminal/terminal";
 import "./aboutMe.css";
 
 const AboutMe = forwardRef<HTMLHeadingElement>((_, aboutMeRef) => {

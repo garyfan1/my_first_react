@@ -76,7 +76,7 @@ function App() {
             align="center"
           >
             <Burger onClick={toggle} opened={!opened} />
-            <ColorSchemeSwitch />
+            {/* <ColorSchemeSwitch /> */}
           </Flex>
           <MyHeader
             scrollToAboutMe={scrollToAboutMe}

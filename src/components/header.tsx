@@ -64,7 +64,7 @@ const MyHeader = ({ ...props }) => {
           </Button>
         </Group>
 
-        <ColorSchemeSwitch />
+        {/* <ColorSchemeSwitch /> */}
       </Flex>
     </>
   );

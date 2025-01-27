@@ -1,5 +1,8 @@
 import {
   ActionIcon,
+  Box,
+  Center,
+  Flex,
   Grid,
   Group,
   Title,
@@ -14,19 +17,16 @@ import {
 import info from "../assets/info.json";
 import classes from "../components/hello.module.css";
 import { useEffect, useState } from "react";
+import Terminal from "../components/terminal/terminal";
 
 const Hello = () => {
-  const titleOrder = useMatches<TitleOrder>({
-    base: 2,
-    sm: 1,
-  });
-
   const myLinksOrder = useMatches<TitleOrder>({
     base: 4,
     sm: 3,
   });
 
-  const title = `Hello!\n\nI'm Gary Fan\n\nA software engineer specializing in web development and backend solutions, focused on building scalable and efficient applications with technologies like Django, Vue.js, Angular, and AWS.`;
+  const title =
+    "Hello!\n\nI'm Gary Fan\n\nA software engineer specializing in web development and backend solutions, focused on building scalable and efficient applications with technologies like Django, Vue.js, Angular, and AWS.";
 
   const [curTitle, setTitle] = useState("");
 
@@ -48,21 +48,28 @@ const Hello = () => {
 
   return (
     <>
-      <Grid mih={{ base: 500, sm: 400 }}>
+      <Grid>
+        <Grid.Col span={1}></Grid.Col>
         <Grid.Col
           mt={{ base: 30, sm: 0 }}
-          ml={{ base: 30, sm: 12 }}
-          span={{ base: 11, md: 9 }}
+          span={"auto"}
+          mih={{ base: 500, sm: 350 }}
         >
-          <Title mb={40} order={titleOrder} style={{ whiteSpace: "pre-wrap" }}>
-            {curTitle}
-            <span className={classes.blink}>&nbsp;</span>
-          </Title>
+          <Terminal>
+            <Title
+              mb={40}
+              order={2}
+              style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}
+            >
+              {curTitle}
+              <span className={classes.blink}>&nbsp;</span>
+            </Title>
+          </Terminal>
         </Grid.Col>
-        <Grid.Col span={"auto"}></Grid.Col>
+        <Grid.Col span={1}></Grid.Col>
       </Grid>
 
-      <Group ml={{ base: 30, sm: 12 }} gap="sm">
+      <Group mt={50} gap="sm" justify="center">
         <Title order={myLinksOrder}>My Links</Title>
         <ActionIcon
           variant="transparent"

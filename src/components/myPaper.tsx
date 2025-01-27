@@ -1,4 +1,4 @@
-import { Grid, GridCol, Image, MantineStyleProp, Paper } from "@mantine/core";
+import { Grid, GridCol, Image, Paper } from "@mantine/core";
 import { useHover, useInViewport, useMergedRef } from "@mantine/hooks";
 import { ReactNode } from "react";
 import classes from "./fadeIn.module.css";
