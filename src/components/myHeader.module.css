@@ -5,6 +5,6 @@
 .buttonRoot:hover .buttonInner {
   transition: all 0.2s;
 
-  border-bottom: 2px solid var(--mantine-color-blue-filled);
+  border-bottom: 2px solid var(--mantine-primary-color-filled);
   
 }
