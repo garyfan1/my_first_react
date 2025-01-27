@@ -1,6 +1,16 @@
-import { AppShell, Space, rem, Burger, Flex, Affix } from "@mantine/core";
+import {
+  AppShell,
+  Space,
+  rem,
+  Burger,
+  Flex,
+  Affix,
+  MantineThemeOverride,
+  mergeThemeOverrides,
+} from "@mantine/core";
 
 import "@mantine/core/styles.css";
+import "./color.css";
 
 import { MantineProvider, createTheme } from "@mantine/core";
 import Hello from "./sections/hello";
@@ -13,9 +23,24 @@ import Footer from "./sections/footer";
 import MyNavbar from "./components/navbar";
 // import ColorSchemeSwitch from "./components/colorSchemeSwitch";
 import Aurora from "./components/aurora";
+import { useEffect, useState } from "react";
 
 function App() {
-  const theme = createTheme({
+  // const theme = createTheme({
+  //   /** Put your mantine theme override here */
+  //   lineHeights: {
+  //     md: "1.6",
+  //   },
+  //   fontSizes: {
+  //     xs: rem(12),
+  //     sm: rem(14),
+  //     md: rem(18),
+  //   },
+  //   cursorType: "pointer" /* For switch cursor */,
+  //   primaryColor: "teal",
+  // });
+
+  let themeConfig: MantineThemeOverride = {
     /** Put your mantine theme override here */
     lineHeights: {
       md: "1.6",
@@ -27,7 +52,17 @@ function App() {
     },
     cursorType: "pointer" /* For switch cursor */,
     primaryColor: "teal",
-  });
+  };
+
+  const [theme, setTheme] = useState(createTheme(themeConfig));
+
+  useEffect(() => {
+    setTimeout(() => {
+      let temp: MantineThemeOverride = { primaryColor: "blue" };
+      themeConfig = mergeThemeOverrides(themeConfig, temp);
+      setTheme(themeConfig);
+    }, 3000);
+  }, []);
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
     useScrollIntoView<HTMLHeadingElement>({ offset: 100 });
