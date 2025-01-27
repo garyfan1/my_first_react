@@ -26,6 +26,7 @@ function App() {
       md: rem(18),
     },
     cursorType: "pointer" /* For switch cursor */,
+    primaryColor: "teal"
   });
 
   const { scrollIntoView: scrollAboutMeItoView, targetRef: aboutMeRef } =
