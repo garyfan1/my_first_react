@@ -11,7 +11,7 @@ import MyHeader from "./components/header";
 import { useDisclosure, useMouse, useScrollIntoView } from "@mantine/hooks";
 import Footer from "./sections/footer";
 import MyNavbar from "./components/navbar";
-import ColorSchemeSwitch from "./components/colorSchemeSwitch";
+// import ColorSchemeSwitch from "./components/colorSchemeSwitch";
 import Aurora from "./components/aurora";
 
 function App() {

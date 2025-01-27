@@ -1,6 +1,6 @@
 import { Group, Button, Flex } from "@mantine/core";
 import { useWindowScroll } from "@mantine/hooks";
-import ColorSchemeSwitch from "./colorSchemeSwitch";
+// import ColorSchemeSwitch from "./colorSchemeSwitch";
 import classes from "./myHeader.module.css";
 
 const MyHeader = ({ ...props }) => {
