@@ -1,10 +1,11 @@
 .buttonInner {
   border: 2px solid transparent;
+  transition: color var(--color-transition-function)
 }
 
 .buttonRoot:hover .buttonInner {
-  transition: all 0.2s;
+  transition: color var(--color-transition-function), border-bottom-color var(--color-transition-function);
 
-  border-bottom: 2px solid var(--mantine-color-blue-filled);
+  border-bottom: 2px solid var(--mantine-primary-color-filled);
   
 }
