@@ -28,7 +28,7 @@ const Hello = () => {
   });
 
   const title =
-    "> Hello!\n\n> I'm Gary Fan\n\n> A software engineer specializing in web development and backend solutions, focused on building scalable and efficient applications with technologies like Django, Vue.js, Angular, and AWS.";
+    "> Hello!\n\n> I'm Gary Fan\n\n> A software engineer specializing in web development and backend solutions, focused on building scalable and efficient applications with technologies like React Native, React, Django, Vue.js, Angular, and AWS.";
 
   const [curTitle, setTitle] = useState("");
 

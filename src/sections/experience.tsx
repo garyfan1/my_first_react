@@ -46,21 +46,68 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
       <Container size={containerSize}>
         <Grid>
           <Grid.Col pl={{ base: 30, md: 8 }} span={{ base: 12, md: 2 }}>
-            <Title order={3} ref={myMergedRef} 
+            <Title
+              order={3}
+              ref={myMergedRef}
               className={inViewport ? classes.fadeIn : classes.hiddenLeft}
-              >
+            >
               Experience
             </Title>
           </Grid.Col>
           <Grid.Col span={{ base: 12, md: 10 }}>
             <Stack>
               <Flex>
-                <Timeline start_date="Oct. 2023" end_date="Sep. 2022" />
+                <Timeline start_date="May 2022" end_date="present" />
+                <MyPaper>
+                  <Group justify="space-between">
+                    <Title order={titleOrder}>Fullstack Developer</Title>
+                    <Group gap="xs">
+                      <ActionIcon
+                        variant="transparent"
+                        component="a"
+                        href="https://youtu.be/XOv8qIY49zM"
+                        target="_blank"
+                        size={iconSize}
+                      >
+                        <IconExternalLink></IconExternalLink>
+                      </ActionIcon>
+                    </Group>
+                  </Group>
+                  <Text fs="italic" size={textSize}>
+                    Suogogo Ltd.
+                  </Text>
+                  <Container p="0 16 0 0">
+                    <List size={textSize}>
+                      <List.Item>
+                        Built ~60% of the mobile app's screens in React Native +
+                        Expo with Zustand state management; established core
+                        architecture and reusable components to speed feature
+                        delivery.
+                      </List.Item>
+                      <List.Item>
+                        Took ownership of the app from inception, ramping from
+                        minimal React Native experience to primary
+                        decision-maker on mobile implementation and quality.
+                      </List.Item>
+                      <List.Item>
+                        Contributed to the internal admin tools with React +
+                        Vite, enabling non-dev staff to manage logistics data
+                        without engineering bottlenecks.
+                      </List.Item>
+                    </List>
+                  </Container>
+                  <Group my={10} gap={10}>
+                    <MyBadge>React Native</MyBadge> <MyBadge>React</MyBadge>
+                  </Group>
+                </MyPaper>
+              </Flex>
+              <Flex>
+                <Timeline start_date="Sep. 2022" end_date="Oct. 2023" />
                 <MyPaper>
                   <Flex justify="space-between">
                     <Title order={titleOrder}>Back-End Developer</Title>
 
-                    <ActionIcon
+                    {/*<ActionIcon
                       variant="transparent"
                       component="a"
                       href="https://app.g7star.net/"
@@ -68,7 +115,7 @@ const Experience = forwardRef<HTMLHeadingElement>((_, experienceRef) => {
                       size={iconSize}
                     >
                       <IconExternalLink></IconExternalLink>
-                    </ActionIcon>
+                    </ActionIcon>*/}
                   </Flex>
                   <Text fs="italic" size={textSize}>
                     Lychee Technology
